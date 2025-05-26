@@ -13,6 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: extdn/github-actions-m2/magento-phpstan/8.3@master
+      - uses: extdn/github-actions-m2/magento-phpstan/8.4@master
         with:
           composer_name: ${{ inputs.composer_name }}
