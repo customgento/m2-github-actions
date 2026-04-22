@@ -10,11 +10,10 @@ on:
         description: "Composer name"
         required: true
         type: string
+
 jobs:
-  # skip Magento 2.4.5-p11 PHP 7.4 Integration Tests, because integration testing framework does not work with PHP 7.4
-  # see https://github.com/extdn/github-actions-m2/issues/73
-  integration-tests-2-4-5-p11-8-1:
-    name: Magento 2.4.5-p11 PHP 8.1 Integration Tests
+  integration-tests-2-4-6-p13-8-1:
+    name: Magento 2.4.6-p13 PHP 8.1 Integration Tests
     runs-on: ubuntu-latest
     services:
       mysql:
@@ -29,23 +28,22 @@ jobs:
         ports:
           - 9200:9200
         env:
-          'discovery.type': single-node
-          'xpack.security.enabled': false
+          "discovery.type": single-node
+          "xpack.security.enabled": false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v4
-      - name: M2 Integration Tests with Magento 2 Version 2.4.5-p11 (PHP 8.1)
+      - name: M2 Integration Tests with Magento 2 Version 2.4.6-p13 (PHP 8.1)
         uses: extdn/github-actions-m2/magento-integration-tests/8.1@master
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: '2.4.5-p11'
-          composer_version: '2'
-  # skip Magento 2.4.5-p12 PHP 7.4 Integration Tests, because integration testing framework does not work with PHP 7.4
-  # see https://github.com/extdn/github-actions-m2/issues/73
-  integration-tests-2-4-5-p12-8-1:
-    name: Magento 2.4.5-p12 PHP 8.1 Integration Tests
+          magento_version: "2.4.6-p13"
+          composer_version: "2"
+
+  integration-tests-2-4-6-p13-8-2:
+    name: Magento 2.4.6-p13 PHP 8.2 Integration Tests
     runs-on: ubuntu-latest
     services:
       mysql:
@@ -60,79 +58,22 @@ jobs:
         ports:
           - 9200:9200
         env:
-          'discovery.type': single-node
-          'xpack.security.enabled': false
+          "discovery.type": single-node
+          "xpack.security.enabled": false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v4
-      - name: M2 Integration Tests with Magento 2 Version 2.4.5-p12 (PHP 8.1)
-        uses: extdn/github-actions-m2/magento-integration-tests/8.1@master
-        with:
-          module_name: ${{ inputs.module_name }}
-          composer_name: ${{ inputs.composer_name }}
-          magento_version: '2.4.5-p12'
-          composer_version: '2'
-  integration-tests-2-4-6-p9-8-1:
-    name: Magento 2.4.6-p9 PHP 8.1 Integration Tests
-    runs-on: ubuntu-latest
-    services:
-      mysql:
-        image: mysql:5.7
-        env:
-          MYSQL_ROOT_PASSWORD: root
-        ports:
-          - 3306:3306
-        options: --tmpfs /tmp:rw --tmpfs /var/lib/mysql:rw --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-      es:
-        image: docker.io/wardenenv/elasticsearch:7.8
-        ports:
-          - 9200:9200
-        env:
-          'discovery.type': single-node
-          'xpack.security.enabled': false
-          ES_JAVA_OPTS: "-Xms64m -Xmx512m"
-        options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
-    steps:
-      - uses: actions/checkout@v4
-      - name: M2 Integration Tests with Magento 2 Version 2.4.6-p9 (PHP 8.1)
-        uses: extdn/github-actions-m2/magento-integration-tests/8.1@master
-        with:
-          module_name: ${{ inputs.module_name }}
-          composer_name: ${{ inputs.composer_name }}
-          magento_version: '2.4.6-p9'
-          composer_version: '2'
-  integration-tests-2-4-6-p9-8-2:
-    name: Magento 2.4.6-p9 PHP 8.2 Integration Tests
-    runs-on: ubuntu-latest
-    services:
-      mysql:
-        image: mysql:5.7
-        env:
-          MYSQL_ROOT_PASSWORD: root
-        ports:
-          - 3306:3306
-        options: --tmpfs /tmp:rw --tmpfs /var/lib/mysql:rw --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-      es:
-        image: docker.io/wardenenv/elasticsearch:7.8
-        ports:
-          - 9200:9200
-        env:
-          'discovery.type': single-node
-          'xpack.security.enabled': false
-          ES_JAVA_OPTS: "-Xms64m -Xmx512m"
-        options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
-    steps:
-      - uses: actions/checkout@v4
-      - name: M2 Integration Tests with Magento 2 Version 2.4.6-p9 (PHP 8.2)
+      - name: M2 Integration Tests with Magento 2 Version 2.4.6-p13 (PHP 8.2)
         uses: extdn/github-actions-m2/magento-integration-tests/8.2@master
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: '2.4.6-p9'
-          composer_version: '2'
-  integration-tests-2-4-6-p10-8-1:
-    name: Magento 2.4.6-p10 PHP 8.1 Integration Tests
+          magento_version: "2.4.6-p13"
+          composer_version: "2"
+
+  integration-tests-2-4-6-p14-8-1:
+    name: Magento 2.4.6-p14 PHP 8.1 Integration Tests
     runs-on: ubuntu-latest
     services:
       mysql:
@@ -147,21 +88,22 @@ jobs:
         ports:
           - 9200:9200
         env:
-          'discovery.type': single-node
-          'xpack.security.enabled': false
+          "discovery.type": single-node
+          "xpack.security.enabled": false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v4
-      - name: M2 Integration Tests with Magento 2 Version 2.4.6-p10 (PHP 8.1)
+      - name: M2 Integration Tests with Magento 2 Version 2.4.6-p14 (PHP 8.1)
         uses: extdn/github-actions-m2/magento-integration-tests/8.1@master
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: '2.4.6-p10'
-          composer_version: '2'
-  integration-tests-2-4-6-p10-8-2:
-    name: Magento 2.4.6-p10 PHP 8.2 Integration Tests
+          magento_version: "2.4.6-p14"
+          composer_version: "2"
+
+  integration-tests-2-4-6-p14-8-2:
+    name: Magento 2.4.6-p14 PHP 8.2 Integration Tests
     runs-on: ubuntu-latest
     services:
       mysql:
@@ -176,19 +118,20 @@ jobs:
         ports:
           - 9200:9200
         env:
-          'discovery.type': single-node
-          'xpack.security.enabled': false
+          "discovery.type": single-node
+          "xpack.security.enabled": false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v4
-      - name: M2 Integration Tests with Magento 2 Version 2.4.6-p10 (PHP 8.2)
+      - name: M2 Integration Tests with Magento 2 Version 2.4.6-p14 (PHP 8.2)
         uses: extdn/github-actions-m2/magento-integration-tests/8.2@master
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: '2.4.6-p10'
-          composer_version: '2'
+          magento_version: "2.4.6-p14"
+          composer_version: "2"
+
   integration-tests-2-4-7-p4-8-1:
     name: Magento 2.4.7-p4 PHP 8.1 Integration Tests
     runs-on: ubuntu-latest
@@ -205,8 +148,8 @@ jobs:
         ports:
           - 9200:9200
         env:
-          'discovery.type': single-node
-          'xpack.security.enabled': false
+          "discovery.type": single-node
+          "xpack.security.enabled": false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
@@ -216,8 +159,9 @@ jobs:
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: '2.4.7-p4'
-          composer_version: '2'
+          magento_version: "2.4.7-p4"
+          composer_version: "2"
+
   integration-tests-2-4-7-p4-8-2:
     name: Magento 2.4.7-p4 PHP 8.2 Integration Tests
     runs-on: ubuntu-latest
@@ -234,8 +178,8 @@ jobs:
         ports:
           - 9200:9200
         env:
-          'discovery.type': single-node
-          'xpack.security.enabled': false
+          "discovery.type": single-node
+          "xpack.security.enabled": false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
@@ -245,8 +189,9 @@ jobs:
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: '2.4.7-p4'
-          composer_version: '2'
+          magento_version: "2.4.7-p4"
+          composer_version: "2"
+
   integration-tests-2-4-7-p4-8-3:
     name: Magento 2.4.7-p4 PHP 8.3 Integration Tests
     runs-on: ubuntu-latest
@@ -263,8 +208,8 @@ jobs:
         ports:
           - 9200:9200
         env:
-          'discovery.type': single-node
-          'xpack.security.enabled': false
+          "discovery.type": single-node
+          "xpack.security.enabled": false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
@@ -274,8 +219,9 @@ jobs:
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: '2.4.7-p4'
-          composer_version: '2'
+          magento_version: "2.4.7-p4"
+          composer_version: "2"
+
   integration-tests-2-4-7-p5-8-1:
     name: Magento 2.4.7-p5 PHP 8.1 Integration Tests
     runs-on: ubuntu-latest
@@ -292,8 +238,8 @@ jobs:
         ports:
           - 9200:9200
         env:
-          'discovery.type': single-node
-          'xpack.security.enabled': false
+          "discovery.type": single-node
+          "xpack.security.enabled": false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
@@ -303,8 +249,9 @@ jobs:
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: '2.4.7-p5'
-          composer_version: '2'
+          magento_version: "2.4.7-p5"
+          composer_version: "2"
+
   integration-tests-2-4-7-p5-8-2:
     name: Magento 2.4.7-p5 PHP 8.2 Integration Tests
     runs-on: ubuntu-latest
@@ -321,8 +268,8 @@ jobs:
         ports:
           - 9200:9200
         env:
-          'discovery.type': single-node
-          'xpack.security.enabled': false
+          "discovery.type": single-node
+          "xpack.security.enabled": false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
@@ -332,8 +279,9 @@ jobs:
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: '2.4.7-p5'
-          composer_version: '2'
+          magento_version: "2.4.7-p5"
+          composer_version: "2"
+
   integration-tests-2-4-7-p5-8-3:
     name: Magento 2.4.7-p5 PHP 8.3 Integration Tests
     runs-on: ubuntu-latest
@@ -350,8 +298,8 @@ jobs:
         ports:
           - 9200:9200
         env:
-          'discovery.type': single-node
-          'xpack.security.enabled': false
+          "discovery.type": single-node
+          "xpack.security.enabled": false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
@@ -361,8 +309,9 @@ jobs:
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: '2.4.7-p5'
-          composer_version: '2'
+          magento_version: "2.4.7-p5"
+          composer_version: "2"
+
   integration-tests-2-4-8-8-2:
     name: Magento 2.4.8 PHP 8.2 Integration Tests
     runs-on: ubuntu-latest
@@ -379,8 +328,8 @@ jobs:
         ports:
           - 9200:9200
         env:
-          'discovery.type': single-node
-          'xpack.security.enabled': false
+          "discovery.type": single-node
+          "xpack.security.enabled": false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
@@ -390,8 +339,9 @@ jobs:
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: '2.4.8'
-          composer_version: '2'
+          magento_version: "2.4.8"
+          composer_version: "2"
+
   integration-tests-2-4-8-8-3:
     name: Magento 2.4.8 PHP 8.3 Integration Tests
     runs-on: ubuntu-latest
@@ -408,8 +358,8 @@ jobs:
         ports:
           - 9200:9200
         env:
-          'discovery.type': single-node
-          'xpack.security.enabled': false
+          "discovery.type": single-node
+          "xpack.security.enabled": false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
@@ -419,8 +369,9 @@ jobs:
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: '2.4.8'
-          composer_version: '2'
+          magento_version: "2.4.8"
+          composer_version: "2"
+
   integration-tests-2-4-8-8-4:
     name: Magento 2.4.8 PHP 8.4 Integration Tests
     runs-on: ubuntu-latest
@@ -437,8 +388,8 @@ jobs:
         ports:
           - 9200:9200
         env:
-          'discovery.type': single-node
-          'xpack.security.enabled': false
+          "discovery.type": single-node
+          "xpack.security.enabled": false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
@@ -448,5 +399,5 @@ jobs:
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: '2.4.8'
-          composer_version: '2'
+          magento_version: "2.4.8"
+          composer_version: "2"
