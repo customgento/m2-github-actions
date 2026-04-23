@@ -28,8 +28,8 @@ jobs:
         ports:
           - 9200:9200
         env:
-          "discovery.type": single-node
-          "xpack.security.enabled": false
+          'discovery.type': single-node
+          'xpack.security.enabled': false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
@@ -58,8 +58,8 @@ jobs:
         ports:
           - 9200:9200
         env:
-          "discovery.type": single-node
-          "xpack.security.enabled": false
+          'discovery.type': single-node
+          'xpack.security.enabled': false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
@@ -88,8 +88,8 @@ jobs:
         ports:
           - 9200:9200
         env:
-          "discovery.type": single-node
-          "xpack.security.enabled": false
+          'discovery.type': single-node
+          'xpack.security.enabled': false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
@@ -118,8 +118,8 @@ jobs:
         ports:
           - 9200:9200
         env:
-          "discovery.type": single-node
-          "xpack.security.enabled": false
+          'discovery.type': single-node
+          'xpack.security.enabled': false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
@@ -148,8 +148,8 @@ jobs:
         ports:
           - 9200:9200
         env:
-          "discovery.type": single-node
-          "xpack.security.enabled": false
+          'discovery.type': single-node
+          'xpack.security.enabled': false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
@@ -178,8 +178,8 @@ jobs:
         ports:
           - 9200:9200
         env:
-          "discovery.type": single-node
-          "xpack.security.enabled": false
+          'discovery.type': single-node
+          'xpack.security.enabled': false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
@@ -208,8 +208,8 @@ jobs:
         ports:
           - 9200:9200
         env:
-          "discovery.type": single-node
-          "xpack.security.enabled": false
+          'discovery.type': single-node
+          'xpack.security.enabled': false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
@@ -238,8 +238,8 @@ jobs:
         ports:
           - 9200:9200
         env:
-          "discovery.type": single-node
-          "xpack.security.enabled": false
+          'discovery.type': single-node
+          'xpack.security.enabled': false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
@@ -268,8 +268,8 @@ jobs:
         ports:
           - 9200:9200
         env:
-          "discovery.type": single-node
-          "xpack.security.enabled": false
+          'discovery.type': single-node
+          'xpack.security.enabled': false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
@@ -298,8 +298,8 @@ jobs:
         ports:
           - 9200:9200
         env:
-          "discovery.type": single-node
-          "xpack.security.enabled": false
+          'discovery.type': single-node
+          'xpack.security.enabled': false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
@@ -328,8 +328,8 @@ jobs:
         ports:
           - 9200:9200
         env:
-          "discovery.type": single-node
-          "xpack.security.enabled": false
+          'discovery.type': single-node
+          'xpack.security.enabled': false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
@@ -358,8 +358,8 @@ jobs:
         ports:
           - 9200:9200
         env:
-          "discovery.type": single-node
-          "xpack.security.enabled": false
+          'discovery.type': single-node
+          'xpack.security.enabled': false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
@@ -388,8 +388,8 @@ jobs:
         ports:
           - 9200:9200
         env:
-          "discovery.type": single-node
-          "xpack.security.enabled": false
+          'discovery.type': single-node
+          'xpack.security.enabled': false
           ES_JAVA_OPTS: "-Xms64m -Xmx512m"
         options: --health-cmd="curl localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
