@@ -39,7 +39,7 @@ jobs:
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: "2.4.6-p13"
+          magento_version: '2.4.6-p13'
           composer_version: "2"
 
   integration-tests-2-4-6-p13-8-2:
@@ -69,7 +69,7 @@ jobs:
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: "2.4.6-p13"
+          magento_version: '2.4.6-p13'
           composer_version: "2"
 
   integration-tests-2-4-6-p14-8-1:
@@ -99,7 +99,7 @@ jobs:
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: "2.4.6-p14"
+          magento_version: '2.4.6-p14'
           composer_version: "2"
 
   integration-tests-2-4-6-p14-8-2:
@@ -129,7 +129,7 @@ jobs:
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: "2.4.6-p14"
+          magento_version: '2.4.6-p14'
           composer_version: "2"
 
   integration-tests-2-4-7-p8-8-2:
@@ -159,7 +159,7 @@ jobs:
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: "2.4.7-p8"
+          magento_version: '2.4.7-p8'
           composer_version: "2"
 
   integration-tests-2-4-7-p8-8-3:
@@ -189,7 +189,7 @@ jobs:
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: "2.4.7-p8"
+          magento_version: '2.4.7-p8'
           composer_version: "2"
 
   integration-tests-2-4-7-p9-8-2:
@@ -219,7 +219,7 @@ jobs:
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: "2.4.7-p9"
+          magento_version: '2.4.7-p9'
           composer_version: "2"
 
   integration-tests-2-4-7-p9-8-3:
@@ -249,7 +249,7 @@ jobs:
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: "2.4.7-p9"
+          magento_version: '2.4.7-p9'
           composer_version: "2"
 
   integration-tests-2-4-8-p3-8-3:
@@ -279,7 +279,7 @@ jobs:
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: "2.4.8-p3"
+          magento_version: '2.4.8-p3'
           composer_version: "2"
 
   integration-tests-2-4-8-p3-8-4:
@@ -309,7 +309,7 @@ jobs:
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: "2.4.8-p3"
+          magento_version: '2.4.8-p3'
           composer_version: "2"
 
   integration-tests-2-4-8-p4-8-3:
@@ -339,7 +339,7 @@ jobs:
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: "2.4.8-p4"
+          magento_version: '2.4.8-p4'
           composer_version: "2"
 
   integration-tests-2-4-8-p4-8-4:
@@ -369,5 +369,5 @@ jobs:
         with:
           module_name: ${{ inputs.module_name }}
           composer_name: ${{ inputs.composer_name }}
-          magento_version: "2.4.8-p4"
+          magento_version: '2.4.8-p4'
           composer_version: "2"
