@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: extdn/github-actions-m2/magento-mess-detector@master
+      - uses: kapilpandya22/github-actions-m2/magento-mess-detector/8.5@feature/mess-detector-multi-version
