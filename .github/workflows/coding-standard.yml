@@ -9,6 +9,6 @@ jobs:
       - uses: actions/checkout@v6
       - uses: extdn/github-actions-m2/magento-coding-standard/8.5@master
         env:
-          PHPCS_EXTENSIONS: phtml
+          PHPCS_EXTENSIONS: php,phtml
         with:
-          phpcs_severity: 6
+          phpcs_severity: 5
