@@ -8,8 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: extdn/github-actions-m2/magento-coding-standard/8.5@master
-        # phpcs_extensions is not a declared input of the extdn action, so it is
-        # set via env (read directly by its entrypoint) to avoid an "Unexpected input" warning
         env:
           PHPCS_EXTENSIONS: php,phtml
         with:
