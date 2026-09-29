@@ -7,8 +7,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      # Same ruleset Package Maven uses for its module tests
+      - name: Write PHPCS ruleset
+        run: |
+          cat > .cg-phpcs.xml <<'EOF'
+          <?xml version="1.0"?>
+          <ruleset name="PackageMavenTest">
+              <rule ref="Magento2">
+                  <exclude name="Magento2.Annotation.MethodArguments.ParamMissing"/>
+                  <exclude name="Magento2.Annotation.MethodAnnotationStructure.MethodAnnotation"/>
+                  <exclude name="Magento2.Commenting.ClassPropertyPHPDocFormatting.Missing"/>
+                  <exclude name="Magento2.Annotation.MethodArguments.NoCommentBlock"/>
+                  <exclude name="Magento2.Annotation.MethodAnnotationStructure.NoCommentBlock"/>
+                  <exclude name="Magento2.Less"/>
+                  <exclude name="Magento2.Html.HtmlDirective.HtmlTemplatesUndefinedVariable"/>
+                  <exclude name="Magento2.Html.HtmlSelfClosingTags.HtmlSelfClosingNonVoidTag"/>
+                  <exclude name="Squiz.CSS.NamedColours"/>
+              </rule>
+              <rule ref="Generic.Files.LineLength">
+                  <exclude-pattern>*.xml</exclude-pattern>
+                  <exclude-pattern>*.phtml</exclude-pattern>
+              </rule>
+          </ruleset>
+          EOF
       - uses: extdn/github-actions-m2/magento-coding-standard/8.5@master
         env:
           PHPCS_EXTENSIONS: php,phtml
         with:
           phpcs_severity: 5
+          phpcs_standard: .cg-phpcs.xml

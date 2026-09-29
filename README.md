@@ -2,6 +2,7 @@
 
 ## coding-standard.yml
 This workflow is for checking the coding standards of a Magento 2 module. It runs when called by another workflow `workflow_call`.
+It uses the same PHPCS ruleset as Package Maven: the Magento2 standard at severity 5 on `.php` and `.phtml` files, without the docblock sniffs and without line length in `.phtml` and `.xml` files.
 
 ## integration.yml
 This workflow is for running integration tests on a Magento 2 module with various Magento and PHP versions.
