@@ -13,6 +13,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      # The ExtDN action picks up phpstan.neon from the module root; paths resolve from the Magento root
+      - name: Write PHPStan config
+        run: |
+          test -f phpstan.neon || cat > phpstan.neon <<'NEON'
+          includes:
+              - %currentWorkingDirectory%/dev/tests/static/testsuite/Magento/Test/Php/_files/phpstan/phpstan.neon
+          parameters:
+              ignoreErrors:
+                  -
+                      identifier: missingType.iterableValue
+              excludePaths:
+                  - %currentWorkingDirectory%/vendor/*/*/Test/**
+                  - %currentWorkingDirectory%/vendor/*/*/src/Test/**
+          NEON
       - uses: extdn/github-actions-m2/magento-phpstan/8.5@master
         with:
           composer_name: ${{ inputs.composer_name }}
+          phpstan_level: 8

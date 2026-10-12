@@ -15,6 +15,7 @@ It sets up the PHP Mess Detector to analyze Magento code for potential issues, h
 ## phpstan.yml
 The `phpstan.yml` file sets up a GitHub Actions workflow for running PHPStan on a Magento 2 project.
 PHPStan is a static analysis tool that detects potential bugs and code quality issues.
+It runs at level 8 with Magento's PHPStan config, ignoring missing array value types and excluding `Test/` folders. A module can override this by adding its own `phpstan.neon`.
 
 ## unit.yml
 This workflow is for running unit tests on a Magento 2 module with various Magento and PHP versions.
